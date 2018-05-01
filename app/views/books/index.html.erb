@@ -1,2 +1,28 @@
+<section class="hero is-medium is_danger">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        AJAX IN ACTION
+      </h1>
+      <%= link_to "New Book", new_book_path, id:"new_book", remote: true %>
+      <hr>
+      <% @books.each do |book| %>
+        <h4><%= book.title %></h4>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+
+<br>
 <hr>
-<%= @response %>
+<br>
+<section class="hero is-success is-large">
+  <div class="hero-header">
+    <h1>UNPARSED JSON FROM THE API CALL</h1>
+  </div>
+  <div class="hero-body">
+    <%= @response %>
+  </div>
+</section>
