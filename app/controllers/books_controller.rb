@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  def show
+  def index
     api_call = Book.new
     @response = api_call.API_call()
   end

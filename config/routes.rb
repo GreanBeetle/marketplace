@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :products
   resources :order_items
   resource :cart, only: [:show]
-  resource :book
+  resources :books, only: [:index, :show, :create, :destroy, :update]
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
