@@ -7,14 +7,14 @@
         </h1>
 
         <h3 style="margin: 0 auto;">
-          <%= link_to "New Book", new_book_path, id:"new_book", remote: true %>
+          <%= link_to "New Book", new_book_path, id:"new_link", remote: true %>
         </h3>
       </div>
       <hr>
 
       <div class="level">
         <div class="level-item">
-          <div id="availible">
+          <div id="available">
             <h3>AVAILABLE</h3>
             <hr>
             <%= render @available %>
