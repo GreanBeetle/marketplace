@@ -5,7 +5,7 @@ Book.destroy_all
   Product.create!(:name => Faker::Coffee.blend_name, :price => Faker::Number.decimal(2))
 end
 
-20.times do |i|
+10.times do |i|
   @title = Faker::Book.title
   @available = Faker::Boolean.boolean(0.5)
   Book.create!(title: @title, available: @available)
