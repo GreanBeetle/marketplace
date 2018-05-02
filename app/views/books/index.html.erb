@@ -6,10 +6,37 @@
       </h1>
       <%= link_to "New Book", new_book_path, id:"new_book", remote: true %>
       <hr>
-      <% @books.each do |book| %>
-        <h4><%= book.title %></h4>
-        <hr>
-      <% end %>
+
+      <div class="level">
+        <div class="level-item">
+        <% if @books.any? %>
+          <div id="available">
+            <h3>AVAILABLE</h3><br>
+            <% @books.each do |book| %>
+              <% if book.available == true %>
+                <p><%= book.title %></p>
+                <hr>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="level-item">
+          <div>
+            <h3>RECENTLY SOLD TITLES</h3><br>
+            <% @books.each do |book| %>
+            <% if book.available == false %>
+            <p><%= book.title %></p>
+            <hr>
+            <% end %>
+            <% end %>
+          </div>
+        <% end %>
+        </div>
+
+      </div>
+
+
     </div>
   </div>
 </section>

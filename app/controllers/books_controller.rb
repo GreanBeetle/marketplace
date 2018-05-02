@@ -11,9 +11,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(book_params)
+    @book = Book.new(book_params)
+    @book.available = true
+    @book.save
     if @book.save
-      flash[:notice] = "#{@book.title} was added" 
+      flash[:notice] = "#{@book.title} was added"
     end
     respond_to do |format|
       format.html { redirect_to books_path }
