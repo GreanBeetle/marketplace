@@ -1,41 +1,34 @@
 <section class="hero is-medium is_danger">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">
-        AJAX IN ACTION
-      </h1>
-      <%= link_to "New Book", new_book_path, id:"new_book", remote: true %>
+      <div style="text-align:center;">
+        <h1 class="title">
+          AJAX IN ACTION
+        </h1>
+
+        <h3 style="margin: 0 auto;">
+          <%= link_to "New Book", new_book_path, id:"new_book", remote: true %>
+        </h3>
+      </div>
       <hr>
 
       <div class="level">
         <div class="level-item">
-        <% if @books.any? %>
-          <div id="available">
-            <h3>AVAILABLE</h3><br>
-            <% @books.each do |book| %>
-              <% if book.available == true %>
-                <p><%= book.title %></p>
-                <hr>
-              <% end %>
-            <% end %>
+          <div id="availible">
+            <h3>AVAILABLE</h3>
+            <hr>
+            <%= render @available %>
           </div>
         </div>
 
         <div class="level-item">
-          <div>
-            <h3>RECENTLY SOLD TITLES</h3><br>
-            <% @books.each do |book| %>
-            <% if book.available == false %>
-            <p><%= book.title %></p>
+          <div id="unavailable">
+            <h3>RECENTLY SOLD</h3>
             <hr>
-            <% end %>
-            <% end %>
+            <%= render @unavailable %>
           </div>
-        <% end %>
         </div>
-
       </div>
-
 
     </div>
   </div>

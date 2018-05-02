@@ -1,0 +1,6 @@
+<%= form_for book, :remote => true do |f| %>
+  <%= f.check_box :available %>
+  <%= f.submit "Update" %>
+  <%= f.label :available, book.title %>
+  <%= link_to "DELETE", book, method: :delete, data: {confirm: "You sure?"}, remote: true %>
+<% end %>
