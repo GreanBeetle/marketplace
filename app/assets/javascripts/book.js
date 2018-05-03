@@ -1,6 +1,6 @@
 $(function(){
+  $('.edit_book input[type=submit]').remove();
   $('.edit_book input[type=checkbox]').click(function(){
-    console.log("button clicked");
-    alert("clicked!")
-  });  
+    $(this).parent('form').submit();
+  });
 });
